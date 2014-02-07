@@ -1,16 +1,16 @@
 import java.io.*;
 import java.util.*;
 
-public class TestingJava {
-  public static int addOne(int x){
-    x = x + 1;
-    return x;
-  }
-
+public class DoMath {
   public static void main(String[] args) {
+
     int z = Integer.parseInt(args[0]);
-    int y = addOne(z);
-    System.out.println(y);
+
+    int added         = AddOne.addOne(z);
+    int multiplied    = MultiplyThree.multiplyThree(z);
+
+    System.out.println(added);
+    System.out.println(multiplied);
   }
 }
 

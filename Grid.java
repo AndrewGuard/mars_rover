@@ -5,7 +5,7 @@ import java.util.regex.Pattern;
 
 public class Grid {
 
-  private static void readFile(String fileName) {
+  private static int[] readFile(String fileName) {
     try {
       Scanner sc = new Scanner(new File(fileName));
       while(sc.hasNextLine()) {

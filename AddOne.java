@@ -1,5 +1,5 @@
 public class AddOne {
- public static int addOne(int x){
+ public static long addOne(long x){
     return x + 1;
   }
 }

@@ -1,9 +1,9 @@
 public class Exponent {
- public static int exponentTwo(int x){
+ public static long exponentTwo(long x){
     return x * x;
   }
 
-  public static int exponentThree(int x){
+  public static long exponentThree(long x){
     return x * x * x;
   }
 }

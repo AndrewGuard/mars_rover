@@ -4,12 +4,12 @@ import java.util.*;
 public class DoMath {
   public static void main(String[] args) {
 
-    int z = Integer.parseInt(args[0]);
+    long z = Integer.parseInt(args[0]);
 
-    int added               = AddOne.addOne(z);
-    int multiplied          = MultiplyThree.multiplyThree(z);
-    int exponent_two        = Exponent.exponentTwo(z);
-    int exponent_three      = Exponent.exponentThree(z);
+    long added               = AddOne.addOne(z);
+    long multiplied          = MultiplyThree.multiplyThree(z);
+    long exponent_two        = Exponent.exponentTwo(z);
+    long exponent_three      = Exponent.exponentThree(z);
 
     System.out.println(added);
     System.out.println(multiplied);

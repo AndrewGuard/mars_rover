@@ -1,5 +1,5 @@
 public class MultiplyThree {
-  public static int multiplyThree(int x){
+  public static long multiplyThree(long x){
     return x * 3;
   }
 }

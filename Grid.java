@@ -3,27 +3,26 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 import java.util.regex.Pattern;
 
-public class Grid {
+public class CreateGrid {
 
-  private static int[] readFile(String fileName) {
-    try {
-      Scanner sc = new Scanner(new File(fileName));
-      while(sc.hasNextLine()) {
-        String[] numstrs = sc.nextLine().split("\\s+"); // split by white space
-        int[] nums = new int[numstrs.length];
-        for(int i = 0; i < nums.length; i++) nums[i] = Integer.parseInt(numstrs[i]);
-      }
-  } catch (FileNotFoundException e) {
-   e.printStackTrace();
+  private static void readFile(String fileName) {
+   try {
+     Scanner scanner = new Scanner(new File(fileName));
+     scanner.useDelimiter(System.getProperty("line.separator"));
+     while (scanner.hasNext()) {
+       System.out.println(scanner.next());
+     }
+       scanner.close();
+     } catch (FileNotFoundException e) {
+       e.printStackTrace();
+     }
+   }
+
+   public static void main(String[] args) {
+     if (args.length != 1) {
+       System.err.println("Please type in a file to parse");
+       System.exit(0);
+     }
+     readFile(args[0]);
+   }
  }
-
-}
-
-public static void main(String[] args) {
- if (args.length != 1) {
-   System.err.println("Please type in a file to parse");
-   System.exit(0);
- }
- readFile(args[0]);
-}
-}

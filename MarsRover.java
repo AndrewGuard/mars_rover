@@ -4,7 +4,7 @@ import java.util.*;
 public class MarsRover {
 
   private LaunchHelper launchRover = new LaunchHelper();
-  private ArrayList<InputLine> roverInput = new ArrayList<InputLine>();
+  // private ArrayList<InputLine> roverInput = new ArrayList<InputLine>();
 
   private void createPlateu() {
 

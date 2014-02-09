@@ -3,10 +3,19 @@ import java.io.*;
 
 public class LaunchHelper {
 
-  public static void main(String[] args) throws FileNotFoundException {
-    Scanner input = new Scanner(new File(args[0]));
-    while (input.hasNext()) {
-      String nextLine = input.nextLine();
+  private ArrayList<String> roverInput = new ArrayList<String>();
+
+  public ArrayList getRoverInput(String[] args) throws FileNotFoundException {
+    Scanner lineScanner = new Scanner(new File(args[0]));
+    while (lineScanner.hasNextLine()) {
+      String nextLine = lineScanner.nextLine();
+      roverInput.add(nextLine);
     }
+    return roverInput;
   }
+
+  // // Testing purposes here ONLY
+  // public ArrayList main() {
+  //   return roverInput;
+  // }
 }

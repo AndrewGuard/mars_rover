@@ -19,9 +19,9 @@ public class MarsRover {
 
   // }
 
-  public static void main () {
+  public static void main (String[] args) {
     MarsRover rover = new MarsRover();
-    // rover.createPlateu(arg);
+    rover.createPlateu();
     // rover.moveRover();
     // rover.outputCoordinates();
   }

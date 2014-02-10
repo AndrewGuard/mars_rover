@@ -12,7 +12,11 @@ public class MarsRover {
 
     for (int i= 0; i < 2; i++) {
       plateuCoordinates.add(grid[i]);
-      System.out.println(plateuCoordinates.get(i));
+      // System.out.println(plateuCoordinates.get(i));
+    }
+
+    for (String dimension : plateuCoordinates) {
+
     }
   }
 

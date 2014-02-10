@@ -4,9 +4,11 @@ public class MarsRover {
 
 
   public static void main (String[] args) {
-    Plateu plateu = new Plateu();
+    Plateau plateau = new Plateau();
     MarsRover rover = new MarsRover();
-    plateu.getPlateuDimensions();
+    plateau.getPlateauDimensions();
+
+
     RoverLocation location = new RoverLocation();
     location.getStartingLocation();
   }

@@ -9,7 +9,7 @@ public class Plateau {
     String[] grid = Dimensions.split(" ");
 
     for (int i= 0; i < 2; i++) {
-      PlateauDimensions.add(grid[i]);
+      plateauDimensions.add(grid[i]);
     }
     // System.out.println(plateauDimensions);
     return plateauDimensions;

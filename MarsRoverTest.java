@@ -1,3 +1,5 @@
+// This file is just for development, testing, and learning purposes. It is not connected or used in any way by the actual program.
+
 import java.util.*;
 import java.io.*;
 

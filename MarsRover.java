@@ -3,22 +3,10 @@ import java.io.*;
 
 public class MarsRover {
 
-  private LaunchHelper launchHelper = new LaunchHelper();
-  private ArrayList<String> plateuCoordinates = new ArrayList<String>();
 
-  private void createPlateu() {
-    String coordinates = launchHelper.getRoverInput().get(0);
-    String[] grid = coordinates.split(" ");
+  // private ArrayList<String> roverLocation {
 
-    for (int i= 0; i < 2; i++) {
-      plateuCoordinates.add(grid[i]);
-      // System.out.println(plateuCoordinates.get(i));
-    }
-
-    for (String dimension : plateuCoordinates) {
-
-    }
-  }
+  // }
 
   // private void moveRover() {
 
@@ -29,9 +17,8 @@ public class MarsRover {
   // }
 
   public static void main (String[] args) {
+    Plateu plateu = new Plateu();
     MarsRover rover = new MarsRover();
-    rover.createPlateu();
-    // rover.moveRover();
-    // rover.outputCoordinates();
+    plateu.createPlateu();
   }
 }

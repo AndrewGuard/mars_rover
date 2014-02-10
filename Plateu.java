@@ -20,6 +20,32 @@ public class Plateu {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // Pretty loops, useless here for now - TODO - delete prior to submission
     // int plateuLength = Integer.parseInt(plateuCoordinates.get(0));
     // int plateuHeight = Integer.parseInt(plateuCoordinates.get(1));

@@ -2,6 +2,7 @@ import java.util.*;
 
 public class RoverLocation {
   private ArrayList<String> startingLocation = new ArrayList<String>();
+  private LaunchHelper launchHelper = new LaunchHelper();
 
   public ArrayList<String> getStartingLocation() {
     String coordinates = launchHelper.getRoverInput().get(1);

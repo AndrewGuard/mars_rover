@@ -11,14 +11,18 @@ public class Plateu {
 
     for (int i= 0; i < 2; i++) {
       plateuCoordinates.add(grid[i]);
-      // System.out.println(plateuCoordinates.get(i));
     }
 
     int plateuLength = Integer.parseInt(plateuCoordinates.get(0));
     int plateuHeight = Integer.parseInt(plateuCoordinates.get(0));
 
-    System.out.println("plateuLength: " + plateuLength);
+    // System.out.println("plateuLength: " + plateuLength);
+    // System.out.println("plateuHeight: " + plateuHeight);
+
+    for (int x=0; x < plateuLength; x++) {
+      for (int y=0; y < plateuHeight; y++) {
+        System.out.println("x: " + x + " y: " + y);
+      }
+    }
   }
-
-
 }

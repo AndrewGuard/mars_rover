@@ -6,8 +6,8 @@ public class MarsRover {
   private LaunchHelper launchHelper = new LaunchHelper();
   private ArrayList<String> plateuCoordinates = new ArrayList<String>();
 
-  private void createPlateu(String arg) {
-    ArrayList<String> plateuCoordinates = launchHelper.getRoverInput(arg);
+  private void createPlateu() {
+    ArrayList<String> plateuCoordinates = launchHelper.getRoverInput();
     System.out.println(plateuCoordinates);
   }
 
@@ -19,9 +19,9 @@ public class MarsRover {
 
   // }
 
-  public static void main (String[] args) {
+  public static void main () {
     MarsRover rover = new MarsRover();
-    rover.createPlateu(arg);
+    // rover.createPlateu(arg);
     // rover.moveRover();
     // rover.outputCoordinates();
   }

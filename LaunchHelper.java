@@ -5,7 +5,7 @@ public class LaunchHelper {
 
   private ArrayList<String> roverInput = new ArrayList<String>();
 
-  private ArrayList<String> getRoverInput(){
+  public ArrayList<String> getRoverInput(){
     try {
       Scanner s = new Scanner(new File("mars_rover_input.txt"));
       while (s.hasNextLine()) {

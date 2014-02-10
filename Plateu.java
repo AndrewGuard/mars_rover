@@ -1,28 +1,34 @@
 import java.util.*;
-import java.io.*;
 
 public class Plateu {
   private LaunchHelper launchHelper = new LaunchHelper();
-  private ArrayList<String> plateuCoordinates = new ArrayList<String>();
+  private ArrayList<String> plateuDimensions = new ArrayList<String>();
 
-  public void createPlateu() {
-    String coordinates = launchHelper.getRoverInput().get(0);
-    String[] grid = coordinates.split(" ");
+  public ArrayList<String> getPlateuDimensions() {
+    String Dimensions = launchHelper.getRoverInput().get(0);
+    String[] grid = Dimensions.split(" ");
 
     for (int i= 0; i < 2; i++) {
-      plateuCoordinates.add(grid[i]);
+      plateuDimensions.add(grid[i]);
     }
+    // System.out.println(plateuDimensions);
+    return plateuDimensions;
 
-    int plateuLength = Integer.parseInt(plateuCoordinates.get(0));
-    int plateuHeight = Integer.parseInt(plateuCoordinates.get(0));
-
-    // System.out.println("plateuLength: " + plateuLength);
-    // System.out.println("plateuHeight: " + plateuHeight);
-
-    for (int x=0; x < plateuLength; x++) {
-      for (int y=0; y < plateuHeight; y++) {
-        System.out.println("x: " + x + " y: " + y);
-      }
-    }
   }
 }
+
+
+
+
+// Pretty loops, useless here for now - TODO - delete prior to submission
+    // int plateuLength = Integer.parseInt(plateuCoordinates.get(0));
+    // int plateuHeight = Integer.parseInt(plateuCoordinates.get(1));
+
+    // // System.out.println("plateuLength: " + plateuLength);
+    // // System.out.println("plateuHeight: " + plateuHeight);
+
+    // for (int x=0; x < plateuLength; x++) {
+    //   for (int y=0; y < plateuHeight; y++) {
+    //     System.out.println("x: " + x + " y: " + y);
+    //   }
+    // }

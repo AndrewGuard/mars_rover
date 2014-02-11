@@ -11,7 +11,17 @@ public class Plateau {
     for (int i= 0; i < 2; i++) {
       plateauDimensions.add(grid[i]);
     }
-    // System.out.println(plateauDimensions);
+
+    String x_bearing = plateauDimensions.get(0);
+    String y_bearing = plateauDimensions.get(1);
+
+    int x = Integer.parseInt(x_bearing);
+    int y = Integer.parseInt(y_bearing);
+
+    System.out.println("plateauDimensions: " + plateauDimensions);
+    System.out.println("x: " + x);
+    System.out.println("y: " + y);
+
     return plateauDimensions;
   }
 }

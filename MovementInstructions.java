@@ -11,9 +11,10 @@ public class MovementInstructions {
 
     for (int i= 0; i < input.length; i++) {
       roverInstructions.add(input[i]);
-      System.out.println("input: " + input[i]);
+      // System.out.println("input: " + input[i]);
     }
 
+    // To remove an initial empty value from String[] input
     roverInstructions.remove(0);
 
     System.out.println("roverInstructions: " + roverInstructions);

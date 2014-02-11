@@ -11,7 +11,7 @@ public class RoverLocation {
     for (int i= 0; i < 3; i++) {
       startingLocation.add(grid[i]);
     }
-    System.out.println(startingLocation);
+    System.out.println("startingLocation: " + startingLocation);
     return startingLocation;
   }
 }

@@ -21,11 +21,12 @@ public class MarsRover {
     MarsRover rover = new MarsRover();
     plateau.getPlateauDimensions();
 
-    RoverLocation location = new RoverLocation();
-    location.getStartingLocation();
+    // RoverLocation location = new RoverLocation();
+    // location.getStartingLocation();
 
-    MovementInstructions instructions = new MovementInstructions();
+    Movement instructions = new Movement();
     instructions.getInstructions();
+    instructions.getStartingLocation();
   }
 
 }

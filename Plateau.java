@@ -13,6 +13,5 @@ public class Plateau {
     }
     // System.out.println(plateauDimensions);
     return plateauDimensions;
-
   }
 }

@@ -1,16 +1,31 @@
+import java.util.*;
+
+
 public class MarsRover {
+  private ArrayList<String> position = new ArrayList<String>();
 
-  private LaunchHelper launchHelper = new LaunchHelper();
+  private void moveStraight() {
+  }
 
+  private void turnRight() {
+  }
+
+  private void turnLeft() {
+  }
+
+  // private ArrayList<String> roverPosition() {
+  // }
 
   public static void main (String[] args) {
     Plateau plateau = new Plateau();
     MarsRover rover = new MarsRover();
     plateau.getPlateauDimensions();
 
-
     RoverLocation location = new RoverLocation();
     location.getStartingLocation();
+
+    MovementInstructions instructions = new MovementInstructions();
+    instructions.getInstructions();
   }
 
 }

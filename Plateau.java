@@ -1,12 +1,12 @@
 import java.util.*;
 
 public class Plateau {
-  private LaunchHelper launchHelper = new LaunchHelper();
+  // private LaunchHelper launchHelper = new LaunchHelper();
   private ArrayList<String> plateauDimensions = new ArrayList<String>();
 
   public ArrayList<String> getPlateauDimensions() {
-    String Dimensions = launchHelper.getRoverInput().get(0);
-    String[] grid = Dimensions.split(" ");
+    String dimensions = LaunchHelper.getRoverInput().get(0);
+    String[] grid = dimensions.split(" ");
 
     for (int i= 0; i < 2; i++) {
       plateauDimensions.add(grid[i]);

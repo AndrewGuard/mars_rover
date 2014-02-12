@@ -39,6 +39,9 @@ public class UtilityHelper {
 // remove 1st line - the grid dimensions
   public ArrayList<MarsRover> createMarsRovers(){
     ArrayList<MarsRover> marsRovers = new ArrayList<MarsRover>();
+// while loop here to create them
+
+
     // populate marsRovers list
     // remove 1st 2 lines on input
     // create a new MarsRover with those 2 lines
@@ -61,13 +64,11 @@ public class UtilityHelper {
 
   public ArrayList<String> getInstructions() {
     String instructions = LaunchHelper.getRoverInput().get(2);
-
     String[] input = instructions.split("");
 
     for (int i= 0; i < input.length; i++) {
       roverInstructions.add(input[i]);
     }
-
     roverInstructions.remove(0);
 
     System.out.println("roverInstructions in getInstructions(): " + roverInstructions);

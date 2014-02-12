@@ -9,7 +9,7 @@ public class MarsRover {
   private char cardinalDirection;
 
   public MarsRover(ArrayList<String> startingLocation, ArrayList<String> instructions){
-    // parse from starting location
+
     String x = startingLocation.get(0);
     int xLocation = Integer.parseInt(x);
 
@@ -18,7 +18,7 @@ public class MarsRover {
 
     String facing = startingLocation.get(2);
     char cardinalDirection = facing.charAt(0);
-    // same for y, facing
+
     // position = new ArrayList<String>();
     // roverCounter++;
   }
@@ -39,16 +39,26 @@ public class MarsRover {
   }
 
   public static void main (String[] args) {
-    // pass args[0] to launch helper
-    Plateau plateau = new Plateau();
-    UtilityHelper helper = new UtilityHelper(args[0]);
-    MarsRover rover = new MarsRover();
-    plateau.getPlateauDimensions();
+    // // pass args[0] to launch helper
 
-    // movement.getInstructions();
-    // movement.roverLocation();
+    // // while loop after stripping first line, removing 2 lines at a time, pass to new rover,
+    // // MarsRover rover = new MarsRover();
 
-    // iterate through every rover, for loope here for each rover
+    // Plateau plateau = new Plateau();
+    // UtilityHelper helper = new UtilityHelper(args[0]);
+    // MarsRover rover = new MarsRover();
+    // plateau.getPlateauDimensions();
+
+    // helper.getInstructions();
+    // helper.moveRover();
+
+    // // iterate through every rover, for loop here for each rover
+
+
+
+    // call create createmarsrovers
+    // for loop through the return value arraylist in main
+    // print out finalPositions
   }
 
 }

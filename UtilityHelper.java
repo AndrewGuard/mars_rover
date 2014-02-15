@@ -37,7 +37,7 @@ public class UtilityHelper {
     // System.out.println("number of rovers is: " + numberRovers);
 
     while (roverInput.size() > 0) {
-      marsRovers.add(new MarsRover(helper.getStartingLocation(), helper.getInstructions()));
+      marsRovers.add(new MarsRover(getStartingLocation(), getInstructions()));
       roverInput.remove(0);
       roverInput.remove(1);
     }

@@ -25,6 +25,8 @@ public class UtilityHelper {
     } catch (Exception e) {
       System.out.println("Something is wrong with the rover instructions.");
     }
+    System.out.println("Got Here - GetRoverInput");
+
     return roverInput;
   }
 
@@ -50,7 +52,7 @@ public class UtilityHelper {
     return marsRovers;
   }
 
-  private ArrayList<String> getStartingLocation() {
+  public ArrayList<String> getStartingLocation() {
     String coordinates = LaunchHelper.getRoverInput().get(1);
     String[] grid = coordinates.split(" ");
 

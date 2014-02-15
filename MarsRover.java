@@ -8,7 +8,7 @@ public class MarsRover {
   private int yLocation;
   private char cardinalDirection;
 
-  public MarsRover(ArrayList<String> startingLocation, ArrayList<String> instructions){
+  public MarsRover(ArrayList<String> startingLocation, ArrayList<String> roverInstructions){
 
     String x = startingLocation.get(0);
     int xLocation = Integer.parseInt(x);
@@ -19,11 +19,11 @@ public class MarsRover {
     String facing = startingLocation.get(2);
     char cardinalDirection = facing.charAt(0);
 
-    // position = new ArrayList<String>();
-    // roverCounter++;
+    position = new ArrayList<String>();
+    roverCounter++;
   }
 
-  // public static int roverCounter = 0;
+  public static int roverCounter = 0;
 
   private void moveStraight() {
   }
@@ -34,15 +34,22 @@ public class MarsRover {
   private void turnLeft() {
   }
 
-  public String finalPosition(){
-    // long method, return a string after iterating over array
-  }
+  // public String finalPosition(){
+  //   // long method, return a string after iterating over array
+  // }
 
   public static void main (String[] args) {
-    // // pass args[0] to launch helper
+    UtilityHelper helper = new UtilityHelper(args[0]);
+    // helper.getStartingLocation();
+    // helper.getInstructions();
+
+    MarsRover rover1 = new MarsRover(helper.getStartingLocation(), helper.getInstructions());
+
+    // UtilityHelper startup = new UtilityHelper(args[0]);
+    // startup.getRoverInput();
 
     // // while loop after stripping first line, removing 2 lines at a time, pass to new rover,
-    // // MarsRover rover = new MarsRover();
+    // MarsRover rover = new MarsRover();
 
     // Plateau plateau = new Plateau();
     // UtilityHelper helper = new UtilityHelper(args[0]);

@@ -6,6 +6,8 @@ public class UtilityHelper {
   private ArrayList<String> roverInstructions = new ArrayList<String>();
   private ArrayList<String> roverLocation = new ArrayList<String>();
   private ArrayList<String> input = new ArrayList<String>();
+  private ArrayList<MarsRover> marsRovers = new ArrayList<MarsRover>();
+
 
   private ArrayList<String> directions;
   //private ArrayList<String> roverdirections = new ArrayList<String>();
@@ -28,32 +30,23 @@ public class UtilityHelper {
     return roverInput;
   }
 
-  // get paired lines from roverInput and use them to create a rover with instrucions
-  // int / 2, iterate that n times from index 1
-  // private MarsRover createMarsRover(int roverNum){
-  //   MarsRover rover = new MarsRover();
+  public ArrayList<MarsRover> createMarsRovers(ArrayList<String> roverInput){
+    roverInput.remove(0);
+    int instructionLength = roverInput.size();
+    int numberRovers = (instructionLength / 2);
+    // System.out.println("number of rovers is: " + numberRovers);
 
-  //   return rover;
-  // }
+    while (roverInput.size() > 0) {
+      marsRovers.add(new MarsRover(helper.getStartingLocation(), helper.getInstructions()));
+      roverInput.remove(0);
+      roverInput.remove(1);
+    }
 
-// remove 1st line - the grid dimensions
-  public ArrayList<String> createMarsRovers(ArrayList<String> roverInput){
-    // input.remove(0);
-    System.out.println(roverInput);
-// while loop here to create them
-
-    // MarsRover rovers = new MarsRover(helper.getStartingLocation(), helper.getInstructions());
-
-    // populate marsRovers list
-    // remove 1st 2 lines on input
-    // create a new MarsRover with those 2 lines
-    // put that MarsRover into marsRovers list
-
-    return roverInput;
+    return marsRovers;
   }
 
   public ArrayList<String> getStartingLocation() {
-    String coordinates = LaunchHelper.getRoverInput().get(1);
+    String coordinates = LaunchHelper.getRoverInput().get(0);
     String[] grid = coordinates.split(" ");
 
     for (int i= 0; i < 3; i++) {
@@ -65,7 +58,7 @@ public class UtilityHelper {
   }
 
   public ArrayList<String> getInstructions() {
-    String instructions = LaunchHelper.getRoverInput().get(2);
+    String instructions = LaunchHelper.getRoverInput().get(1);
     String[] input = instructions.split("");
 
     for (int i= 0; i < input.length; i++) {

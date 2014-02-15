@@ -7,10 +7,7 @@ public class UtilityHelper {
   private ArrayList<String> roverLocation = new ArrayList<String>();
   private ArrayList<String> input = new ArrayList<String>();
   private ArrayList<MarsRover> marsRovers = new ArrayList<MarsRover>();
-
-
   private ArrayList<String> directions;
-  //private ArrayList<String> roverdirections = new ArrayList<String>();
 
   public UtilityHelper(String filePath){
     directions = getRoverInput(filePath);
@@ -30,23 +27,21 @@ public class UtilityHelper {
     return roverInput;
   }
 
-  public ArrayList<MarsRover> createMarsRovers(ArrayList<String> roverInput){
-    roverInput.remove(0);
-    int instructionLength = roverInput.size();
-    int numberRovers = (instructionLength / 2);
-    // System.out.println("number of rovers is: " + numberRovers);
+  public ArrayList<MarsRover> createMarsRovers(ArrayList<String> directions){
+    directions.remove(0);
+    // int instructionLength = directions.size();
+    // int numberRovers = (instructionLength / 2);
 
-    while (roverInput.size() > 0) {
-      marsRovers.add(new MarsRover(getStartingLocation(), getInstructions()));
-      roverInput.remove(0);
-      roverInput.remove(1);
+    while (directions.size() > 0) {
+      marsRovers.add(new MarsRover(this.getStartingLocation(), this.getInstructions()));
+      directions.remove(0);
+      directions.remove(1);
     }
-
     return marsRovers;
   }
 
   public ArrayList<String> getStartingLocation() {
-    String coordinates = LaunchHelper.getRoverInput().get(0);
+    String coordinates = directions.get(0);
     String[] grid = coordinates.split(" ");
 
     for (int i= 0; i < 3; i++) {
@@ -58,7 +53,7 @@ public class UtilityHelper {
   }
 
   public ArrayList<String> getInstructions() {
-    String instructions = LaunchHelper.getRoverInput().get(1);
+    String instructions = directions.get(1);
     String[] input = instructions.split("");
 
     for (int i= 0; i < input.length; i++) {
@@ -69,19 +64,23 @@ public class UtilityHelper {
     System.out.println("roverInstructions in getInstructions(): " + roverInstructions);
     return roverInstructions;
   }
+}
+
+
+
+
 
 // Will make private later
-  // TODO: add movement
-  public ArrayList<String> moveRover() {
-    getInstructions();
-    System.out.println("roverInstructions in moveRover(): " + roverInstructions);
-    return roverLocation;
-  }
-
-  // Will be a wrapper for moveRover() if necessary
-  // public ArrayList<String> roverLocation() {
-  //   roverLocation = getStartingLocation();
-  //   System.out.println("roverLocation: " + roverLocation);
+  // // TODO: add movement
+  // public ArrayList<String> moveRover() {
+  //   getInstructions();
+  //   System.out.println("roverInstructions in moveRover(): " + roverInstructions);
   //   return roverLocation;
   // }
-}
+
+  // // Will be a wrapper for moveRover() if necessary
+  // // public ArrayList<String> roverLocation() {
+  // //   roverLocation = getStartingLocation();
+  // //   System.out.println("roverLocation: " + roverLocation);
+  // //   return roverLocation;
+  // // }

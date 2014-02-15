@@ -5,6 +5,7 @@ public class UtilityHelper {
   private ArrayList<String> startingLocation = new ArrayList<String>();
   private ArrayList<String> roverInstructions = new ArrayList<String>();
   private ArrayList<String> roverLocation = new ArrayList<String>();
+  private ArrayList<String> input = new ArrayList<String>();
 
   private ArrayList<String> directions;
   //private ArrayList<String> roverdirections = new ArrayList<String>();
@@ -15,7 +16,6 @@ public class UtilityHelper {
 
   public static ArrayList<String> getRoverInput(String filePath){
     ArrayList<String> roverInput = new ArrayList<String>();
-
     try {
       Scanner s = new Scanner(new File(filePath));
       while (s.hasNextLine()) {
@@ -25,12 +25,10 @@ public class UtilityHelper {
     } catch (Exception e) {
       System.out.println("Something is wrong with the rover instructions.");
     }
-    System.out.println("Got Here - GetRoverInput");
-
     return roverInput;
   }
 
-  // get paired lines from input and use them to create a rover with instrucions
+  // get paired lines from roverInput and use them to create a rover with instrucions
   // int / 2, iterate that n times from index 1
   // private MarsRover createMarsRover(int roverNum){
   //   MarsRover rover = new MarsRover();
@@ -39,17 +37,19 @@ public class UtilityHelper {
   // }
 
 // remove 1st line - the grid dimensions
-  public ArrayList<MarsRover> createMarsRovers(){
-    ArrayList<MarsRover> marsRovers = new ArrayList<MarsRover>();
+  public ArrayList<String> createMarsRovers(ArrayList<String> roverInput){
+    input.remove(0);
+    System.out.println(input);
 // while loop here to create them
 
+    // MarsRover rovers = new MarsRover(helper.getStartingLocation(), helper.getInstructions());
 
     // populate marsRovers list
     // remove 1st 2 lines on input
     // create a new MarsRover with those 2 lines
     // put that MarsRover into marsRovers list
 
-    return marsRovers;
+    return input;
   }
 
   public ArrayList<String> getStartingLocation() {

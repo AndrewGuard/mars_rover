@@ -1,10 +1,10 @@
 import java.util.*;
 
 public class MarsRover {
-  private ArrayList<MarsRover> marsRovers;
   private int xLocation;
   private int yLocation;
   private char cardinalDirection;
+  private ArrayList<String> instructions;
 
   public MarsRover(ArrayList<String> startingLocation, ArrayList<String> roverInstructions){
 
@@ -17,11 +17,8 @@ public class MarsRover {
     String facing = startingLocation.get(2);
     char cardinalDirection = facing.charAt(0);
 
-    roverPosition = new ArrayList<String>();
-    roverCounter++;
+    instructions = roverInstructions;
   }
-
-  public static int roverCounter = 0;
 
   private void moveStraight() {
   }
@@ -34,14 +31,18 @@ public class MarsRover {
 
   public String finalPosition(){
     // long method, return a string after iterating over array
+    // leave as string to output to txt
+    System.out.println("Got to finalPostion, baby!");
+
     String finalCoordinates = "";
     return finalCoordinates;
   }
 
   public static void main (String[] args) {
     ArrayList<String> input;
-    Plateau plateau = new Plateau();
+    ArrayList<MarsRover> marsRovers = new ArrayList<MarsRover>();
 
+    Plateau plateau = new Plateau();
     plateau.getPlateauDimensions();
 
     UtilityHelper helper = new UtilityHelper(args[0]);
@@ -51,25 +52,12 @@ public class MarsRover {
     for (int i = 0; i < input.size(); i = i + 2) {
       int x = i;
       int y = i + 1;
-      helper.createMarsRovers(x, y);
+      marsRovers.add(helper.createMarsRover(x, y));
     }
 
-    // // returns arraylist of rover objects
-    static ArrayList<String> roverPosition = helper.getRovers();
-
-    // System.out.println("thing" + helper.getRovers());
-
-    for (int i = 0; i < roverCounter; i++) {
-      System.out.println("roverCounter: " + i);
-      // HOW TO ACCESS marsRover arraylist HERE???
-      // helper.getRovers(i);
+    for (int i = 0; i < marsRovers.size(); i++) {
+      System.out.println("Time number: " + i);
+      marsRovers.get(i).finalPosition();
     }
-
-    // this.getRovers();
-
-    // for (int i = 0; i < this.marsRovers.size(); i++) {
-    //   System.out.println("Iterating over rovers!");
-    // }
-
   }
 }

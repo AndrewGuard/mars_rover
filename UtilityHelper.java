@@ -2,15 +2,11 @@ import java.util.*;
 import java.io.*;
 
 public class UtilityHelper {
-
-  private ArrayList<String> startingLocation = new ArrayList<String>();
-  private ArrayList<String> roverInstructions = new ArrayList<String>();
-  private ArrayList<MarsRover> marsRovers = new ArrayList<MarsRover>();
-  private ArrayList<String> directions;
+  private ArrayList<String> fileData;
 
   public UtilityHelper(String filePath){
-    directions = getRoverInput(filePath);
-    directions.remove(0);
+    fileData = getRoverInput(filePath);
+    fileData.remove(0);
   }
 
   public static ArrayList<String> getRoverInput(String filePath){
@@ -27,13 +23,14 @@ public class UtilityHelper {
     return roverInput;
   }
 
-  public void createMarsRovers(int x, int y){
-    marsRovers.add(new MarsRover(getStartingLocation(x), getInstructions(y)));
+  public MarsRover createMarsRover(int x, int y){
+    return new MarsRover(getStartingLocation(x), getInstructions(y));
   }
 
   public ArrayList<String> getStartingLocation(int x) {
-    String coordinates = directions.get(x);
+    String coordinates = fileData.get(x);
     String[] grid = coordinates.split(" ");
+    ArrayList<String> startingLocation = new ArrayList<String>();
 
     for (int i= 0; i < 3; i++) {
       startingLocation.add(grid[i]);
@@ -42,17 +39,14 @@ public class UtilityHelper {
   }
 
   public ArrayList<String> getInstructions(int y) {
-    String instructions = directions.get(y);
+    String instructions = fileData.get(y);
     String[] input = instructions.split("");
 
+    ArrayList<String> roverInstructions = new ArrayList<String>();
     for (int i= 0; i < input.length; i++) {
       roverInstructions.add(input[i]);
     }
     roverInstructions.remove(0);
     return roverInstructions;
-  }
-
-  public ArrayList<MarsRover> getRovers() {
-    return this.marsRovers;
   }
 }

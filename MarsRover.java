@@ -30,14 +30,33 @@ public class MarsRover {
   }
 
   public String finalPosition(){
+    System.out.println("======================");
     String finalCoordinates = "";
 
     for (int i = 0; i < instructions.size(); i++) {
-      System.out.println("Got to finalPostion FOR LOOP, baby!" + i);
+      // System.out.println("Orders: " + instructions.get(i));
+      switch (instructions.get(i)) {
+        case "M":
+        System.out.println("switch statement");
+        // this.moveStraight();
+        break;
+        case "L":
+        System.out.println("switch statement");
+
+        // this.turnLeft();
+        break;
+        case "R":
+        System.out.println("switch statement");
+
+        // this.turnRight();
+        break;
+      }
     }
 
     return finalCoordinates;
   }
+
+  // ==============================
 
   public static void main (String[] args) {
     ArrayList<String> input;

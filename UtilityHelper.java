@@ -5,9 +5,7 @@ public class UtilityHelper {
 
   private ArrayList<String> startingLocation = new ArrayList<String>();
   private ArrayList<String> roverInstructions = new ArrayList<String>();
-
   private ArrayList<MarsRover> marsRovers = new ArrayList<MarsRover>();
-
   private ArrayList<String> directions;
 
   public UtilityHelper(String filePath){

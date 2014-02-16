@@ -1,10 +1,7 @@
 import java.util.*;
 
 public class MarsRover {
-  private ArrayList<String> position;
-
-  private ArrayList<MarsRover> marsRovers = new ArrayList<MarsRover>();
-
+  private ArrayList<MarsRover> marsRovers;
   private int xLocation;
   private int yLocation;
   private char cardinalDirection;
@@ -20,7 +17,7 @@ public class MarsRover {
     String facing = startingLocation.get(2);
     char cardinalDirection = facing.charAt(0);
 
-    position = new ArrayList<String>();
+    roverPosition = new ArrayList<String>();
     roverCounter++;
   }
 
@@ -57,14 +54,15 @@ public class MarsRover {
       helper.createMarsRovers(x, y);
     }
 
-    // returns arraylist of rover objects
-    helper.getRovers();
+    // // returns arraylist of rover objects
+    static ArrayList<String> roverPosition = helper.getRovers();
 
     // System.out.println("thing" + helper.getRovers());
 
     for (int i = 0; i < roverCounter; i++) {
       System.out.println("roverCounter: " + i);
       // HOW TO ACCESS marsRover arraylist HERE???
+      // helper.getRovers(i);
     }
 
     // this.getRovers();
@@ -75,4 +73,3 @@ public class MarsRover {
 
   }
 }
-

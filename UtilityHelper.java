@@ -24,7 +24,7 @@ public class UtilityHelper {
       }
       s.close();
     } catch (Exception e) {
-      System.out.println("Something is wrong with the rover instructions.");
+      System.out.println("Something is wrong with the rover instructions. File path is mars_rover_input.txt");
     }
     return roverInput;
   }
@@ -55,25 +55,6 @@ public class UtilityHelper {
   }
 
   public ArrayList<MarsRover> getRovers() {
-    return marsRovers;
+    return this.marsRovers;
   }
 }
-
-
-
-
-
-// Will make private later
-  // // TODO: add movement
-  // public ArrayList<String> moveRover() {
-  //   getInstructions();
-  //   System.out.println("roverInstructions in moveRover(): " + roverInstructions);
-  //   return roverLocation;
-  // }
-
-  // // Will be a wrapper for moveRover() if necessary
-  // // public ArrayList<String> roverLocation() {
-  // //   roverLocation = getStartingLocation();
-  // //   System.out.println("roverLocation: " + roverLocation);
-  // //   return roverLocation;
-  // // }

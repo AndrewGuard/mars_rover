@@ -41,11 +41,6 @@ public class MarsRover {
     return finalCoordinates;
   }
 
-  // public ArrayList<MarsRover> getRovers() {
-  //   ArrayList<MarsRover> marsRovers = helper.getRovers();
-  //   return marsRovers;
-  // }
-
   public static void main (String[] args) {
     ArrayList<String> input;
     Plateau plateau = new Plateau();
@@ -62,10 +57,14 @@ public class MarsRover {
       helper.createMarsRovers(x, y);
     }
 
+    // returns arraylist of rover objects
+    helper.getRovers();
+
+    // System.out.println("thing" + helper.getRovers());
+
     for (int i = 0; i < roverCounter; i++) {
       System.out.println("roverCounter: " + i);
       // HOW TO ACCESS marsRover arraylist HERE???
-
     }
 
     // this.getRovers();
@@ -73,7 +72,6 @@ public class MarsRover {
     // for (int i = 0; i < this.marsRovers.size(); i++) {
     //   System.out.println("Iterating over rovers!");
     // }
-
 
   }
 }

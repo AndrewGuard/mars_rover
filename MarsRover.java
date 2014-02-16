@@ -3,7 +3,7 @@ import java.util.*;
 public class MarsRover {
   private int xLocation;
   private int yLocation;
-  private char cardinalDirection;
+  private String cardinalDirection;
   private ArrayList<String> instructions;
 
   public MarsRover(ArrayList<String> startingLocation, ArrayList<String> roverInstructions){
@@ -15,7 +15,7 @@ public class MarsRover {
     int yLocation = Integer.parseInt(y);
 
     String facing = startingLocation.get(2);
-    char cardinalDirection = facing.charAt(0);
+    String cardinalDirection = facing.substring(0, 1);
 
     instructions = roverInstructions;
   }
@@ -24,32 +24,53 @@ public class MarsRover {
   }
 
   private void turnRight() {
+    switch (cardinalDirection) {
+      case "N":
+        cardinalDirection = "E";
+        break;
+      case "E":
+        cardinalDirection = "S";
+        break;
+      case "S":
+        cardinalDirection = "W";
+        break;
+      case "W":
+        cardinalDirection = "N";
+        break;
+    }
   }
 
   private void turnLeft() {
+    switch (cardinalDirection) {
+      case "N":
+        cardinalDirection = "W";
+        break;
+      case "W":
+        cardinalDirection = "S";
+        break;
+      case "S":
+        cardinalDirection = "E";
+        break;
+      case "E":
+        cardinalDirection = "N";
+        break;
+    }
   }
 
   public String finalPosition(){
-    System.out.println("======================");
     String finalCoordinates = "";
 
     for (int i = 0; i < instructions.size(); i++) {
-      // System.out.println("Orders: " + instructions.get(i));
       switch (instructions.get(i)) {
         case "M":
-        System.out.println("switch statement");
-        // this.moveStraight();
-        break;
+          this.moveStraight();
+          break;
         case "L":
-        System.out.println("switch statement");
-
-        // this.turnLeft();
-        break;
+          this.turnLeft();
+          break;
         case "R":
-        System.out.println("switch statement");
-
-        // this.turnRight();
-        break;
+          this.turnRight();
+          break;
       }
     }
 

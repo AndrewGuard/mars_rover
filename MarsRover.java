@@ -40,20 +40,48 @@ public class MarsRover {
   }
 
   public static void main (String[] args) {
+    ArrayList<String> input;
     Plateau plateau = new Plateau();
 
-    // To return plateau dimensions before removing the line from the .txt file
     plateau.getPlateauDimensions();
 
     UtilityHelper helper = new UtilityHelper(args[0]);
-    // TODO - set arg to a variable, clean up code here
-    helper.createMarsRovers(helper.getRoverInput(args[0]));
+    input = helper.getRoverInput(args[0]);
+    input.remove(0);
+    System.out.println("input1: " + input);
+
+    System.out.println("input size: " + input.size());
+
+    for (int i = 0; i < input.size(); i = i + 2) {
+      int x = i;
+      int y = i + 1;
+      helper.createMarsRovers(x, y);
+      System.out.println("Iterating in the foor loop time #: " + x);
+    }
+
+    System.out.println("input2: " + input);
+
+    // helper.createMarsRovers();
+
+
+
+// ==============================
+    // directions.remove(0);
+    // // int instructionLength = directions.size();
+    // // int numberRovers = (instructionLength / 2);
+
+    // while (directions.size() > 0) {
+    //   marsRovers.add(new MarsRover(this.getStartingLocation(), this.getInstructions()));
+    //   directions.remove(0);
+    //   directions.remove(1);
+    // }
 
     // while (!marsRovers.isEmpty()) {
     //   System.out.println("Iterating in main!");
     //   marsRovers.remove(0, 1);
     // }
 
+// ==============================
 
     // MarsRover rovers = new MarsRover(helper.getStartingLocation(), helper.getInstructions());
 

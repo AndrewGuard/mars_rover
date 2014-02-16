@@ -5,7 +5,6 @@ public class UtilityHelper {
 
   private ArrayList<String> startingLocation = new ArrayList<String>();
   private ArrayList<String> roverInstructions = new ArrayList<String>();
-  // private ArrayList<String> roverLocation = new ArrayList<String>();
 
   private ArrayList<String> input = new ArrayList<String>();
   private ArrayList<MarsRover> marsRovers = new ArrayList<MarsRover>();
@@ -42,8 +41,6 @@ public class UtilityHelper {
     for (int i= 0; i < 3; i++) {
       startingLocation.add(grid[i]);
     }
-
-    System.out.println("startingLocation: " + startingLocation);
     return startingLocation;
   }
 
@@ -55,10 +52,17 @@ public class UtilityHelper {
       roverInstructions.add(input[i]);
     }
     roverInstructions.remove(0);
-
-    System.out.println("roverInstructions in getInstructions(): " + roverInstructions);
     return roverInstructions;
   }
+
+  // ===================== TEST METHODS ==============
+
+  public void printMarsRovers() {
+    for (int i = 0; i < marsRovers.size(); i++) {
+      System.out.println("MarsRover: " + marsRovers.get(i));
+    }
+  }
+
 }
 
 

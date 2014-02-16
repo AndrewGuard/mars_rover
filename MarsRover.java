@@ -48,18 +48,20 @@ public class MarsRover {
     UtilityHelper helper = new UtilityHelper(args[0]);
     input = helper.getRoverInput(args[0]);
     input.remove(0);
-    System.out.println("input1: " + input);
-
-    System.out.println("input size: " + input.size());
 
     for (int i = 0; i < input.size(); i = i + 2) {
       int x = i;
       int y = i + 1;
       helper.createMarsRovers(x, y);
-      System.out.println("Iterating in the foor loop time #: " + x);
     }
 
-    System.out.println("input2: " + input);
+    System.out.println("input0: " + input.get(0));
+    System.out.println("input1: " + input.get(1));
+    System.out.println("input2: " + input.get(2));
+    System.out.println("input3: " + input.get(3));
+
+    helper.printMarsRovers();
+
 
     // helper.createMarsRovers();
 

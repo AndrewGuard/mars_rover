@@ -30,11 +30,12 @@ public class MarsRover {
   }
 
   public String finalPosition(){
-    // long method, return a string after iterating over array
-    // leave as string to output to txt
-    System.out.println("Got to finalPostion, baby!");
-
     String finalCoordinates = "";
+
+    for (int i = 0; i < instructions.size(); i++) {
+      System.out.println("Got to finalPostion FOR LOOP, baby!" + i);
+    }
+
     return finalCoordinates;
   }
 
@@ -56,7 +57,6 @@ public class MarsRover {
     }
 
     for (int i = 0; i < marsRovers.size(); i++) {
-      System.out.println("Time number: " + i);
       marsRovers.get(i).finalPosition();
     }
   }

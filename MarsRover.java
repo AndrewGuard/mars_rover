@@ -3,6 +3,8 @@ import java.util.*;
 public class MarsRover {
   private ArrayList<String> position;
 
+  private ArrayList<MarsRover> marsRovers = new ArrayList<MarsRover>();
+
   private int xLocation;
   private int yLocation;
   private char cardinalDirection;
@@ -39,6 +41,11 @@ public class MarsRover {
     return finalCoordinates;
   }
 
+  // public ArrayList<MarsRover> getRovers() {
+  //   ArrayList<MarsRover> marsRovers = helper.getRovers();
+  //   return marsRovers;
+  // }
+
   public static void main (String[] args) {
     ArrayList<String> input;
     Plateau plateau = new Plateau();
@@ -55,45 +62,19 @@ public class MarsRover {
       helper.createMarsRovers(x, y);
     }
 
-    System.out.println("input0: " + input.get(0));
-    System.out.println("input1: " + input.get(1));
-    System.out.println("input2: " + input.get(2));
-    System.out.println("input3: " + input.get(3));
+    for (int i = 0; i < roverCounter; i++) {
+      System.out.println("roverCounter: " + i);
+      // HOW TO ACCESS marsRover arraylist HERE???
 
-    helper.printMarsRovers();
+    }
 
+    // this.getRovers();
 
-    // helper.createMarsRovers();
-
-
-
-// ==============================
-    // directions.remove(0);
-    // // int instructionLength = directions.size();
-    // // int numberRovers = (instructionLength / 2);
-
-    // while (directions.size() > 0) {
-    //   marsRovers.add(new MarsRover(this.getStartingLocation(), this.getInstructions()));
-    //   directions.remove(0);
-    //   directions.remove(1);
+    // for (int i = 0; i < this.marsRovers.size(); i++) {
+    //   System.out.println("Iterating over rovers!");
     // }
 
-    // while (!marsRovers.isEmpty()) {
-    //   System.out.println("Iterating in main!");
-    //   marsRovers.remove(0, 1);
-    // }
 
-// ==============================
-
-    // MarsRover rovers = new MarsRover(helper.getStartingLocation(), helper.getInstructions());
-
-    // // while loop after stripping first line, removing 2 lines at a time, pass to new rover,
-
-    // // iterate through every rover, for loop here for each rover
-
-    // call create createmarsrovers
-    // for loop through the return value arraylist in main
-    // print out finalPositions
   }
-
 }
+

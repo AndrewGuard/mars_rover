@@ -11,12 +11,6 @@ public class Plateau {
       plateauDimensions.add(grid[i]);
     }
 
-    String x_bearing = plateauDimensions.get(0);
-    String y_bearing = plateauDimensions.get(1);
-
-    int x = Integer.parseInt(x_bearing);
-    int y = Integer.parseInt(y_bearing);
-
     return plateauDimensions;
   }
 }

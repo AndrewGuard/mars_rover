@@ -19,11 +19,6 @@ public class MarsRover {
     instructions = roverInstructions;
   }
 
-  private String getCardinalDirection() {
-    // String cardinalDirection = startingLocation.get(2);
-    return cardinalDirection;
-  }
-
   private void moveStraight() {
     switch (cardinalDirection) {
       case "N":
@@ -90,23 +85,20 @@ public class MarsRover {
           turnRight();
           break;
       }
-      // System.out.println("cardinalDirection: " + cardinalDirection);
-      // System.out.println("xLocation: " + xLocation);
-      // System.out.println("yLocation: " + yLocation);
     }
+
     String xValue = Integer.toString(xLocation);
     String yValue = Integer.toString(yLocation);
 
     finalCoordinates = xValue + " " + yValue + " " + cardinalDirection;
 
-    System.out.println("finalCoordinates: " + finalCoordinates);
+    System.out.println("finalCoordinates for rover: " + finalCoordinates);
     return finalCoordinates;
   }
 
   public static void main (String[] args) {
     ArrayList<String> input;
     ArrayList<MarsRover> marsRovers = new ArrayList<MarsRover>();
-    // String cardinalDirection;
 
     Plateau plateau = new Plateau();
     plateau.getPlateauDimensions();
@@ -122,7 +114,6 @@ public class MarsRover {
     }
 
     for (int i = 0; i < marsRovers.size(); i++) {
-      // System.out.println("cardinalDirection: " + marsRovers.get(i).getCardinalDirection());
       marsRovers.get(i).finalPosition();
     }
   }

@@ -15,7 +15,6 @@ public class MarsRover {
     yLocation = Integer.parseInt(y);
 
     cardinalDirection = startingLocation.get(2);
-    System.out.println("cardinalDirection in marsRovers: " + cardinalDirection);
 
     instructions = roverInstructions;
   }
@@ -26,6 +25,20 @@ public class MarsRover {
   }
 
   private void moveStraight() {
+    switch (cardinalDirection) {
+      case "N":
+        yLocation += 1;
+        break;
+      case "S":
+        yLocation -= 1;
+        break;
+      case "E":
+        xLocation += 1;
+        break;
+      case "W":
+        xLocation -= 1;
+        break;
+    }
   }
 
   private void turnRight() {
@@ -46,7 +59,6 @@ public class MarsRover {
   }
 
   private void turnLeft() {
-    System.out.println("In turnLeft() method");
     switch (cardinalDirection) {
       case "N":
         cardinalDirection = "W";
@@ -65,8 +77,6 @@ public class MarsRover {
 
   public String finalPosition(){
     String finalCoordinates = "";
-    System.out.println("instructions: " + instructions);
-    System.out.println("cardinalDirection: " + cardinalDirection);
 
     for (int i = 0; i < instructions.size(); i++) {
       switch (instructions.get(i)) {
@@ -74,16 +84,19 @@ public class MarsRover {
           moveStraight();
           break;
         case "L":
-          System.out.println("Turn left: ");
           turnLeft();
           break;
         case "R":
           turnRight();
           break;
       }
-
       System.out.println("cardinalDirection: " + cardinalDirection);
+      System.out.println("xLocation: " + xLocation);
+      System.out.println("yLocation: " + yLocation);
+
     }
+
+
     return finalCoordinates;
   }
 
@@ -106,15 +119,8 @@ public class MarsRover {
     }
 
     for (int i = 0; i < marsRovers.size(); i++) {
-      // GET ROVER INSTRUCTIONS
-
-      // GET THE ROVER OBJECT!!!!!!!!!!
-      System.out.println("should be a rover: " + marsRovers.get(i));
-      System.out.println("cardinalDirection: " + marsRovers.get(i).getCardinalDirection());
-
-
-      // System.out.println("rover instructions: " + marsRovers.get(i));
-
+      // System.out.println("cardinalDirection: " + marsRovers.get(i).getCardinalDirection());
+      marsRovers.get(i).finalPosition();
     }
   }
 }

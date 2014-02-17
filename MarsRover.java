@@ -100,11 +100,12 @@ public class MarsRover {
     ArrayList<String> input;
     ArrayList<MarsRover> marsRovers = new ArrayList<MarsRover>();
 
-    Plateau plateau = new Plateau();
-    plateau.getPlateauDimensions();
-
     UtilityHelper helper = new UtilityHelper(args[0]);
     input = helper.getRoverInput(args[0]);
+
+    Plateau plateau = new Plateau();
+    plateau.getPlateauDimensions(input);
+
     input.remove(0);
 
     for (int i = 0; i < input.size(); i = i + 2) {

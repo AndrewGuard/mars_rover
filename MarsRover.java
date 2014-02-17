@@ -9,15 +9,20 @@ public class MarsRover {
   public MarsRover(ArrayList<String> startingLocation, ArrayList<String> roverInstructions){
 
     String x = startingLocation.get(0);
-    int xLocation = Integer.parseInt(x);
+    xLocation = Integer.parseInt(x);
 
     String y = startingLocation.get(1);
-    int yLocation = Integer.parseInt(y);
+    yLocation = Integer.parseInt(y);
 
-    String cardinalDirection = startingLocation.get(2);
+    cardinalDirection = startingLocation.get(2);
     System.out.println("cardinalDirection in marsRovers: " + cardinalDirection);
 
     instructions = roverInstructions;
+  }
+
+  private String getCardinalDirection() {
+    // String cardinalDirection = startingLocation.get(2);
+    return cardinalDirection;
   }
 
   private void moveStraight() {
@@ -105,6 +110,8 @@ public class MarsRover {
 
       // GET THE ROVER OBJECT!!!!!!!!!!
       System.out.println("should be a rover: " + marsRovers.get(i));
+      System.out.println("cardinalDirection: " + marsRovers.get(i).getCardinalDirection());
+
 
       // System.out.println("rover instructions: " + marsRovers.get(i));
 

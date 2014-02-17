@@ -90,13 +90,16 @@ public class MarsRover {
           turnRight();
           break;
       }
-      System.out.println("cardinalDirection: " + cardinalDirection);
-      System.out.println("xLocation: " + xLocation);
-      System.out.println("yLocation: " + yLocation);
-
+      // System.out.println("cardinalDirection: " + cardinalDirection);
+      // System.out.println("xLocation: " + xLocation);
+      // System.out.println("yLocation: " + yLocation);
     }
+    String xValue = Integer.toString(xLocation);
+    String yValue = Integer.toString(yLocation);
 
+    finalCoordinates = xValue + " " + yValue + " " + cardinalDirection;
 
+    System.out.println("finalCoordinates: " + finalCoordinates);
     return finalCoordinates;
   }
 

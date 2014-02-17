@@ -14,8 +14,8 @@ public class MarsRover {
     String y = startingLocation.get(1);
     int yLocation = Integer.parseInt(y);
 
-    String facing = startingLocation.get(2);
-    String cardinalDirection = facing.substring(0, 1);
+    String cardinalDirection = startingLocation.get(2);
+    System.out.println("cardinalDirection in marsRovers: " + cardinalDirection);
 
     instructions = roverInstructions;
   }
@@ -41,6 +41,7 @@ public class MarsRover {
   }
 
   private void turnLeft() {
+    System.out.println("In turnLeft() method");
     switch (cardinalDirection) {
       case "N":
         cardinalDirection = "W";
@@ -59,29 +60,32 @@ public class MarsRover {
 
   public String finalPosition(){
     String finalCoordinates = "";
+    System.out.println("instructions: " + instructions);
+    System.out.println("cardinalDirection: " + cardinalDirection);
 
     for (int i = 0; i < instructions.size(); i++) {
       switch (instructions.get(i)) {
         case "M":
-          this.moveStraight();
+          moveStraight();
           break;
         case "L":
-          this.turnLeft();
+          System.out.println("Turn left: ");
+          turnLeft();
           break;
         case "R":
-          this.turnRight();
+          turnRight();
           break;
       }
-    }
 
+      System.out.println("cardinalDirection: " + cardinalDirection);
+    }
     return finalCoordinates;
   }
-
-  // ==============================
 
   public static void main (String[] args) {
     ArrayList<String> input;
     ArrayList<MarsRover> marsRovers = new ArrayList<MarsRover>();
+    // String cardinalDirection;
 
     Plateau plateau = new Plateau();
     plateau.getPlateauDimensions();
@@ -97,7 +101,13 @@ public class MarsRover {
     }
 
     for (int i = 0; i < marsRovers.size(); i++) {
-      marsRovers.get(i).finalPosition();
+      // GET ROVER INSTRUCTIONS
+
+      // GET THE ROVER OBJECT!!!!!!!!!!
+      System.out.println("should be a rover: " + marsRovers.get(i));
+
+      // System.out.println("rover instructions: " + marsRovers.get(i));
+
     }
   }
 }

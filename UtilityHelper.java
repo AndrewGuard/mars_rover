@@ -46,6 +46,7 @@ public class UtilityHelper {
     for (int i= 0; i < input.length; i++) {
       roverInstructions.add(input[i]);
     }
+    // Removes an empty value
     roverInstructions.remove(0);
     return roverInstructions;
   }

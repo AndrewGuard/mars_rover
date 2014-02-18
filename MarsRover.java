@@ -106,6 +106,7 @@ public class MarsRover {
     Plateau plateau = new Plateau();
     plateau.getPlateauDimensions(input);
 
+    // Removes the plateau input
     input.remove(0);
 
     for (int i = 0; i < input.size(); i = i + 2) {
